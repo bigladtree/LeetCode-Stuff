@@ -1,0 +1,17 @@
+class Solution {
+    public boolean canAliceWin(int[] nums) {
+        //create sums for both
+        int singleNumbers = 0;
+        int doubleNumbers = 0;
+
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] < 10) {
+                singleNumbers += nums[i];
+            } else {
+                doubleNumbers += nums[i];
+            }
+        }
+        
+        return singleNumbers != doubleNumbers;
+    }
+    }
