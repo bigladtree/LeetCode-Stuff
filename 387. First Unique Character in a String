@@ -1,0 +1,22 @@
+class Solution {
+
+    //solution must be in O(n) time, since every character must be checked twice.
+    public int firstUniqChar(String s) {
+        int[] frequency = new int[26];
+        
+        //counting characters
+        for (int i = 0; i < s.length(); i++) {
+            int charIndex = s.charAt(i) - 'a';
+            frequency[charIndex]++;
+        }
+        //checking if the current character only occurs once
+        for (int i = 0; i < s.length(); i++) {
+            int charIndex = s.charAt(i) - 'a';
+            if (frequency[charIndex] == 1) {
+                return i;
+            }
+        }
+        //return if there are no unique characters
+        return -1;
+        }
+    }
